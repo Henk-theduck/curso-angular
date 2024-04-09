@@ -20,4 +20,10 @@ export class CardComponent {
   @Input() planType: string = 'Simples';
   @Input() planPrice: number = 100;
 
+  buttonClicked(event: boolean){
+    this.planPrice += 10;
+    console.log(this.planPrice);
+    console.log(event)
+  }
+
 }
