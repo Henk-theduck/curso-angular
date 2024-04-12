@@ -6,24 +6,16 @@ import { Component, Input} from '@angular/core';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  // type = 'Simples';
-  // price = 100;
+  private _planType: string = 'Simples';
 
-  // getFullPrice(){
-  //   return 'R$'+ this.price + ',00/Mês';
-  // }
-  plan = {
-    type : 'Simples',
-    price : 100.50
-  };
-
-  @Input() planType: string = 'Simples';
+  @Input() 
+  set planType(value: string){this._planType=value.toUpperCase();}
+  get planType(): string {return this._planType;}
+  
   @Input() planPrice: number = 100;
 
   buttonClicked(event: boolean){
     this.planPrice += 10;
-    console.log(this.planPrice);
-    console.log(event)
   }
 
 }

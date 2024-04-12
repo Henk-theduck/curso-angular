@@ -6,14 +6,16 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  // title = 'projeto-components';
-  // inputText = 'Texto Inicio';
-  // inputType = "password";
-  // isDisable = false;
-  // buttonTitle = 'Butão';
-
   cardPlanType = 'Completo';
   cardPlanPrice = 250; 
+
+
+  handlePlanType(value: string){
+    this.cardPlanType = value;
+    if (value == '') {
+      this.cardPlanType = 'Completo';
+    }
+  }
 
 
   // widthButton = '110px';
@@ -29,4 +31,6 @@ export class AppComponent {
   //   const currentText = (event.target as HTMLInputElement); 
   //   console.log(currentText.value);
   // }
+
+ 
 }
